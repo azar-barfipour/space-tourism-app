@@ -1,0 +1,17 @@
+body {
+  background-image: url("../../../assets/home/background-home-desktop.jpg");
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.logo-wrapper {
+  margin: 1rem;
+}
+.nav__items {
+  display: flex;
+}
+.nav__item {
+  list-style: none;
+  padding: 1rem;
+}

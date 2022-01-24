@@ -1,17 +1,27 @@
-body {
-  background-image: url("../../../assets/home/background-home-desktop.jpg");
-}
 .header-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .logo-wrapper {
   margin: 1rem;
 }
+.nav__wrapper {
+  margin: 1rem;
+}
 .nav__items {
-  display: flex;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  z-index: 10;
+  background-color: wheat;
 }
 .nav__item {
   list-style: none;
   padding: 1rem;
+  color: aliceblue;
+}
+.nav--open {
+  display: block;
 }

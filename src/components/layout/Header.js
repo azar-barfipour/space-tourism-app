@@ -1,24 +1,28 @@
 import classes from "./Header.module.css";
+import { ReactComponent as Logo } from "../../assets/shared/logo.svg";
+import { ReactComponent as Nav } from "../../assets/shared/icon-hamburger.svg";
+import { useState } from "react";
 const Header = () => {
+  const [isOpenNav, setIsOpenNav] = useState(false);
+  const navOpenHandler = () => {
+    setIsOpenNav(!isOpenNav);
+  };
   return (
     <div className={classes["header-wrapper"]}>
-      <div className={classes["logo-wrapper"]}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-          <g fill="none" fill-rule="evenodd">
-            <circle cx="24" cy="24" r="24" fill="#FFF" />
-            <path
-              fill="#0B0D17"
-              d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
-            />
-          </g>
-        </svg>
+      <Logo className={classes["logo-wrapper"]} />
+      <div className={classes["nav__wrapper"]}>
+        <Nav onClick={navOpenHandler} />
+        <ul
+          className={`${classes["nav__items"]}  ${
+            isOpenNav ? classes["nav--open"] : ""
+          }`}
+        >
+          <li className={classes["nav__item"]}>HOME</li>
+          <li className={classes["nav__item"]}>DESTINATION</li>
+          <li className={classes["nav__item"]}>CREW</li>
+          <li className={classes["nav__item"]}>TECHNOLOGY</li>
+        </ul>
       </div>
-      <ul className={classes["nav__items"]}>
-        <li className={classes["nav__item"]}>HOME</li>
-        <li className={classes["nav__item"]}>DESTINATION</li>
-        <li className={classes["nav__item"]}>CREW</li>
-        <li className={classes["nav__item"]}>TECHNOLOGY</li>
-      </ul>
     </div>
   );
 };

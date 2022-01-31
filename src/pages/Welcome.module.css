@@ -1,0 +1,19 @@
+.wrapper {
+  width: 90%;
+  margin: 10rem auto;
+}
+.header {
+  color: #fff;
+  text-align: center;
+}
+.text {
+  color: #fff;
+  text-align: center;
+  line-height: 150%;
+}
+@media (min-width: 40rem) {
+  .wrapper {
+    width: 40%;
+    margin: 10rem 2rem;
+  }
+}

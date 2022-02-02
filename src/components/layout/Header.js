@@ -5,7 +5,8 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 const Header = () => {
   const [isOpenNav, setIsOpenNav] = useState(false);
-  const navOpenHandler = () => {
+  const navOpenHandler = (e) => {
+    e.preventDefault();
     setIsOpenNav(!isOpenNav);
   };
   return (

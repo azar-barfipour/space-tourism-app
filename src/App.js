@@ -9,21 +9,25 @@ import { useEffect, useState } from "react";
 function App() {
   const [jsonData, setJsonData] = useState([]);
   const fetchData = async () => {
-    const res = await fetch("data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-    const data = await res.json();
-    setJsonData(data);
+    try {
+      const res = await fetch("data.json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      console.log(res);
+      const data = await res.json();
+      console.log(data);
+      setJsonData(data);
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
-
-  console.log(jsonData);
 
   return (
     <Layout>
@@ -34,8 +38,11 @@ function App() {
           path="destination"
           element={<Destination items={jsonData} />}
         ></Route>
-        )<Route path="crew" element={<Crew />}></Route>
-        <Route path="technology" element={<Technology />}></Route>
+        <Route path="crew" element={<Crew items={jsonData} />}></Route>
+        <Route
+          path="technology"
+          element={<Technology items={jsonData} />}
+        ></Route>
       </Routes>
     </Layout>
   );

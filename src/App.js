@@ -17,9 +17,11 @@ function App() {
         },
       });
       console.log(res);
+      if (!res.ok) throw new Error(`something went wrong`);
       const data = await res.json();
       console.log(data);
       setJsonData(data);
+      console.log(jsonData);
     } catch (err) {
       console.log(err.message);
     }
@@ -34,10 +36,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="home" />}></Route>
         <Route path="home" element={<Welcome />}></Route>
-        <Route
-          path="destination"
-          element={<Destination items={jsonData} />}
-        ></Route>
+        {jsonData && (
+          <Route
+            path="destination"
+            element={<Destination items={jsonData} />}
+          ></Route>
+        )}
         <Route path="crew" element={<Crew items={jsonData} />}></Route>
         <Route
           path="technology"

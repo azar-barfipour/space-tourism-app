@@ -1,0 +1,12 @@
+.tab-wrapper {
+  background-color: rgb(169, 195, 223);
+  width: 50%;
+  min-width: 400px;
+  margin: 6rem 2rem;
+  height: 250px;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.tab-detail {
+  margin-top: 1rem;
+}

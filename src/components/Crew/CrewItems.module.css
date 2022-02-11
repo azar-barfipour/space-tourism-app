@@ -1,0 +1,18 @@
+.crew_header {
+  color: rgb(139, 144, 150);
+  text-align: center;
+}
+.crew_silde {
+  background-color: rgb(169, 195, 223);
+  width: 50%;
+  max-width: 400px;
+  margin: 6rem auto;
+  height: 250px;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+.crew_silde__wrapper {
+  width: 50%;
+  min-width: 500px;
+  margin: 1rem auto;
+}
